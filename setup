@@ -1,0 +1,5 @@
+#!/bin/bash
+
+echo Installing sudoers - need root password
+sed -e s/@USER@/$(whoami)/ sudoers.in > sudoers
+su -c "install -m 0440 sudoers /etc; restorecon /etc/sudoers"

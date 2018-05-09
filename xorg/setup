@@ -1,0 +1,11 @@
+#!/bin/bash
+
+sudo install -m 0644 xorg.conf /etc/X11
+
+sed -e "s|@HOME@|${HOME}|" xsession > ~/.xsession
+chmod +x ~/.xsession
+mkdir -p ~/.config/autostart
+sed -e "s|@HOME@|${HOME}|" xsession.desktop \
+	> ~/.config/autostart/xsession.desktop
+
+sudo restorecon -R ~/.xsession ~/.config/autostart /etc/X11/xorg.conf

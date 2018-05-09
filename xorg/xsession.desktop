@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=xsession
+GenericName=My .xsession
+Comment=Run my .xsession on startup
+Exec=@HOME@/.xsession
+Terminal=true
+Type=Application
+X-GNOME-Autostart-enabled=true
